@@ -1,6 +1,6 @@
 package com.pk.controller;
 
-import com.pk.dto.Student;
+import com.pk.dto.StudentDto;
 import com.pk.response.ApiResponse;
 import com.pk.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class StudentController {
 
 
     @PostMapping("/std/reg")
-    public ResponseEntity<ApiResponse<UUID>> stdReg(@RequestBody Student student){
+    public ResponseEntity<ApiResponse<UUID>> stdReg(@RequestBody StudentDto student){
         ResponseEntity<ApiResponse<UUID>> response = null;
         UUID stdId = service.regStd(student);
         if (stdId !=null){
